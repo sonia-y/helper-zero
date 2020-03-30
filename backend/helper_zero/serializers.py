@@ -31,6 +31,10 @@ class OrganizationSerializer(serializers.ModelSerializer):
     donations = DonationSerializer(many=True, required=False)
     auth_token = serializers.CharField(write_only=True)
 
+    url = serializers.CharField(required=False, allow_null=True)
+    pickup_times = serializers.CharField(required=False, allow_null=True)
+    dropoff_times = serializers.CharField(required=False, allow_null=True)
+    description = serializers.CharField(required=False, allow_null=True)
     email = serializers.CharField(required=False)
     auth_user_id = serializers.CharField(required=False)
     pickup_instructions = serializers.CharField(allow_null=True, required=False)
